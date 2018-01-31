@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <script type="text/javascript">
+ function CustomerObj(id,name,age)
+ {
+	 this.id=id;
+	 this.name=name;
+	 this.age=age;
+ }
+ var customerArray= [];
+ customerArray[0]= new CustomerObj(1,"bhanu",22);
+ customerArray[1]= new CustomerObj(2,"venkatesh",23);
+ customerArray[2]= new CustomerObj(3,"sai",19);
+ customerArray[3]= new CustomerObj(4,"kohli",28);
+ customerArray[4]= new CustomerObj(5,"bunny",30);
+ 
+  customerArray.sort(function(a,b)
+	{
+	  return a.age-b.age;
+    });
+  for(i=0;i<customerArray.length;i++)
+	  {
+	  document.write(customerArray[i].id+"  "+customerArray[i].name+"  "+customerArray[i].age+"<br>");
+	  }
+ 
+ 
+ </script>
+</body>
+</html>
