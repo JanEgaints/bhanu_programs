@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+ function isLeapYear(year)
+ {
+	 return ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
+ }
+ var dob = new Date("06-13-1995");
+ var today = new Date();
+ var year = today.getFullYear() - dob.getFullYear();
+ var month=today.getMonth()- dob.getMonth();
+ var days= today.getDate()-dob.getDate();
+ a=dob.getMonth();
+ if(days<0)
+	 {
+	   month-=1;
+	   if(a==3||a==5||a==8||a==10)
+		   {
+       	     days+=30;
+		   }
+	   else if(a==0||a==2||a==4||a==6||a==7||a==9||a==11)
+		   {
+	 	     days+=31;
+		   }
+	   else if(a==1 && isLeapYear(dob.getFullYear()))
+		   {
+		     days+=29;
+		   } 
+	      else
+		   {
+		   days+=28;
+		   }
+	 } 
+ if(month<0||(month==0&&days<0))
+	 {
+ 	   year-=1;
+ 	   month+=12;
+	 }
+ document.write(year+" years "+month+" months and"+"<br>");
+ document.write(days+" days");
+ 
+ 
+ 
+ 
+
+</script>
+</body>
+</html>
