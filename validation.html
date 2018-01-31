@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function validateDetails()
+{
+     var email = document.getElementById("email").value;
+
+     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+     if (reg.test(email) == false) 
+        {
+    	 alert("Invalid Email Address");
+        }
+     var credit = document.getElementById("creditcardnumber").value;
+     var reg1 = /^([0-9]{13,16})$/;
+     if(reg1.test(credit)==false)
+    	 {
+    	 alert("invalid creditcard number");
+    	 }
+}
+</script>
+</head>
+<body>
+ <h2 align="center">Registration Form</h2>
+ <form action=""onsubmit="validateDetails()">
+ <table>
+ <tr>
+     <td><label>email</label></td>
+     <td><input type="text" id="email"/></td>
+     
+ </tr>
+ 
+ <tr>
+      <td><label>creditcard number</label></td>
+      <td><input type="number" name="creditcardnumber" id="creditcardnumber"/></td>
+ </tr>
+   
+   <tr>
+      <td><input type="submit" value="Register"/></td>
+   </tr>
+ </table>
+ </form>
+</body>
+</html>
